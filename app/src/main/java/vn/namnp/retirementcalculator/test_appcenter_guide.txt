@@ -1,0 +1,15 @@
+
+Continuous Quality's related to CI
+
++ Overview: test files -> apk -> upload apk file to appcenter -> run test
++ Steps:
+1. cd to root project
+2. run command:
+appcenter test run espresso --app "Namnpse/CDCIDroid"
+--devices bc9e812a
+--app-path app/build/outputs/apk/debug/app-debug.apk
+--test-series "test"
+--locale "en_US"
+--build-dir app/build/outputs/apk/androidTest/debug
+
+-> run in all devices that are registered before -> after finishing -> show test result, logs
