@@ -19,6 +19,8 @@ import org.hamcrest.core.IsInstanceOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import com.microsoft.appcenter.espresso.Factory
+import com.microsoft.appcenter.espresso.ReportHelper
 import org.junit.After
 
 @LargeTest
@@ -29,6 +31,9 @@ class RetirementCalTest {
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
+    @Rule
+    @JvmField
+    var reportHelper: ReportHelper = Factory.getReportHelper()
 
     @Test
     fun retirementCalTest() {
@@ -154,6 +159,6 @@ class RetirementCalTest {
 
     @After
     fun tearDown() {
-
+        reportHelper.label("Finishing test")
     }
 }
